@@ -8,6 +8,11 @@ def initialize(discount = 0)
   @items = []
 end
 
+def self.items
+  @items
+end
+
+
 def add_item(item, price, quantity = 1)
   @price = price
   @quantity = quantity
@@ -15,11 +20,11 @@ def add_item(item, price, quantity = 1)
   if quantity > 1
     counter = 0
     while counter < quantity
-      @items << item
+      self.items << item
       counter += 1
     end
   else
-    @items << item
+    self.items << item
   end
 end
 
